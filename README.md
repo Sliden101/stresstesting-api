@@ -18,7 +18,10 @@ Replace Server IP, Username and Password with your server info. Change the API K
 Add more methods
 if($method == "METHOD"){if(ssh2_exec($connection, "screen -dm -S $host timeout $time ./METHOD $host $port 2 300000 $time")){echo "Attack sent to $host for $time seconds using $method!";}else{die("Ran into a error");}}
 
-You have to find your own methods for this api to work rename them as nesscessary and add more as nesscessary
+You have to find your own methods for this API to work rename them as nesscessary and add more as nesscessary
+
+Note: Scripts written in 'C' need to be compiled with GCC compiler, first.
+
 
 How to use
 http://serverip/api.php?key=superkey&host=[host]&port=[port]&time=[time]&method=[method]
